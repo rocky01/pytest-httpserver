@@ -45,3 +45,8 @@ doc-clean:
 
 changes:
 	reno report --output CHANGES.rst --no-show-source
+
+release-pip:
+	.venv/bin/pip install bumpversion
+
+pre-release: clean doc-clean dev release-pip quick-test
